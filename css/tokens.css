@@ -1,0 +1,90 @@
+:root {
+  --color-red: #E1211E;
+  --color-red-dark: #C01A18;
+  --color-black: #0A0A0A;
+  --color-white: #FFFFFF;
+  --color-gray-50: #F8F8F8;
+  --color-gray-100: #F2F2F2;
+  --color-gray-200: #E8E8E8;
+  --color-gray-400: #9A9A9A;
+  --color-gray-600: #5A5A5A;
+
+  --font-family: 'Onest', system-ui, sans-serif;
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-inner: 20px;
+  --radius-outer: 32px;
+  --radius-tile: 32px;
+  --radius-shell: 56px;
+  --radius-tile-alt: 56px 32px 32px 56px;
+  --radius-tile-alt-2: 32px 56px 56px 32px;
+  --radius-pill: 999px;
+
+  --gap: 10px;
+  --gap-lg: 20px;
+  --container-max: 1280px;
+  --header-height: 96px;
+  --section-overlap: -28px;
+
+  --shadow-soft: 0 8px 32px rgba(10, 10, 10, 0.06);
+  --shadow-lift: 0 16px 48px rgba(10, 10, 10, 0.12);
+  --shadow-header: 0 4px 24px rgba(10, 10, 10, 0.08);
+
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-black);
+  background: var(--color-gray-50);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input {
+  font: inherit;
+  border: none;
+  background: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+}

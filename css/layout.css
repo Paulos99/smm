@@ -1,0 +1,307 @@
+.container {
+  width: min(100% - 32px, var(--container-max));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 40px;
+  position: relative;
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.section--tight {
+  padding-block: 20px;
+}
+
+.section--hero {
+  padding-top: 8px;
+  padding-bottom: 20px;
+  z-index: 2;
+}
+
+.section--overlap {
+  margin-top: var(--section-overlap);
+  z-index: 1;
+}
+
+.section--overlap + .section--overlap {
+  z-index: auto;
+}
+
+/* Section shells — organic capsules */
+.section-shell {
+  border-radius: var(--radius-shell);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.section-shell--white {
+  background: var(--color-white);
+}
+
+.section-shell--contacts {
+  background: var(--color-white);
+}
+
+.section-shell__inner {
+  padding: var(--gap);
+}
+
+/* Bento canvas */
+.bento-canvas {
+  display: grid;
+  gap: var(--gap);
+}
+
+.bento-tile {
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--radius-tile);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.bento-tile--shape-a {
+  border-radius: var(--radius-tile-alt);
+}
+
+.bento-tile--shape-b {
+  border-radius: var(--radius-tile-alt-2);
+}
+
+.bento-tile--white {
+  background: var(--color-white);
+}
+
+.bento-tile--red {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.bento-tile--black {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.bento-tile--gray {
+  background: var(--color-gray-50);
+}
+
+.canvas-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.canvas-title--dark {
+  color: var(--color-black);
+}
+
+/* Hero — три колонки: текст / команда / лого */
+.hero-mosaic {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.88fr) minmax(0, 0.72fr);
+  grid-template-rows: minmax(320px, 1fr);
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.hero-mosaic__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  padding: clamp(24px, 3vw, 40px);
+}
+
+.hero-mosaic__desc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: var(--shadow-soft);
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.hero-mosaic__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-red);
+  position: relative;
+  overflow: visible;
+  box-shadow: var(--shadow-lift);
+  min-height: 100%;
+}
+
+.hero-mosaic__logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.14) 0%, transparent 52%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-mosaic__logo .logo-sphere {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Arsenal canvas */
+.arsenal-canvas {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "title title title title title title"
+    "m01 m01 m02 m03 m03 m03"
+    "m04 m05 m06 m07 m07 m07";
+}
+
+.arsenal-canvas__title {
+  grid-area: title;
+  border-radius: var(--radius-tile-alt-2);
+}
+
+.arsenal-canvas .mission-tile:nth-child(2) { grid-area: m01; }
+.arsenal-canvas .mission-tile:nth-child(3) { grid-area: m02; }
+.arsenal-canvas .mission-tile:nth-child(4) { grid-area: m03; }
+.arsenal-canvas .mission-tile:nth-child(5) { grid-area: m04; }
+.arsenal-canvas .mission-tile:nth-child(6) { grid-area: m05; }
+.arsenal-canvas .mission-tile:nth-child(7) { grid-area: m06; }
+.arsenal-canvas .mission-tile:nth-child(8) { grid-area: m07; }
+
+/* Why canvas */
+.why-canvas {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "heading heading heading heading heading heading heading heading heading heading heading heading"
+    "feat feat feat feat w02 w02 w02 w02 w03 w03 w03 w03"
+    "feat feat feat feat w04 w04 w04 w05 w05 w06 w06 w06";
+}
+
+.why-canvas__heading {
+  grid-area: heading;
+  border-radius: var(--radius-tile-alt);
+}
+
+.why-canvas .why-tile:nth-child(2) { grid-area: feat; }
+.why-canvas .why-tile:nth-child(3) { grid-area: w02; }
+.why-canvas .why-tile:nth-child(4) { grid-area: w03; }
+.why-canvas .why-tile:nth-child(5) { grid-area: w04; }
+.why-canvas .why-tile:nth-child(6) { grid-area: w05; }
+.why-canvas .why-tile:nth-child(7) { grid-area: w06; }
+
+/* Cases canvas */
+.cases-canvas {
+  grid-template-columns: 1fr;
+}
+
+.cases-canvas__heading {
+  border-radius: var(--radius-tile-alt);
+}
+
+/* Contact canvas */
+.contact-canvas {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.contact-canvas__info {
+  border-radius: var(--radius-tile-alt);
+}
+
+.contact-canvas__form {
+  border-radius: var(--radius-tile-alt-2);
+}
+
+@media (max-width: 1024px) {
+  .hero-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "main main"
+      "desc logo";
+  }
+
+  .hero-mosaic__main {
+    grid-area: main;
+  }
+
+  .hero-mosaic__desc {
+    grid-area: desc;
+  }
+
+  .hero-mosaic__logo {
+    grid-area: logo;
+    min-height: 280px;
+  }
+
+  .arsenal-canvas {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "title title"
+      "m01 m01"
+      "m02 m03"
+      "m04 m05"
+      "m06 m07";
+  }
+
+  .why-canvas {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "heading heading"
+      "feat feat"
+      "w02 w03"
+      "w04 w04"
+      "w05 w05"
+      "w06 w06";
+    grid-template-rows: auto;
+  }
+
+  .contact-canvas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 32px;
+  }
+
+  .section-shell {
+    border-radius: 36px;
+  }
+
+  .hero-mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "main"
+      "desc"
+      "logo";
+  }
+
+  .hero-mosaic__main,
+  .hero-mosaic__desc,
+  .hero-mosaic__logo {
+    grid-area: auto;
+  }
+
+  .hero-mosaic__logo {
+    min-height: 260px;
+  }
+
+  .arsenal-canvas,
+  .why-canvas {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  .arsenal-canvas > *,
+  .why-canvas > * {
+    grid-area: auto !important;
+  }
+}
