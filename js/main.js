@@ -407,6 +407,7 @@
       sphere.addEventListener('click', (e) => {
         e.preventDefault();
         spawnLogoBurst(sphere, 'click');
+        sphere.blur();
       });
 
       sphere.addEventListener('focusin', () => {
