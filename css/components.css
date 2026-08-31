@@ -397,18 +397,17 @@
 }
 
 .signals-tile__num {
-  position: absolute;
-  top: clamp(20px, 2.5vw, 28px);
-  left: clamp(20px, 2.5vw, 28px);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1;
   color: var(--color-red);
+  opacity: 0.25;
+  margin-bottom: 8px;
 }
 
 .signals-tile__num--light {
   color: var(--color-white);
-  opacity: 0.55;
+  opacity: 0.4;
 }
 
 .signals-tile__icon {
@@ -451,58 +450,24 @@
   min-height: 160px;
 }
 
-.mission-tile__icon-ring {
+.mission-tile__icon {
   position: absolute;
   top: clamp(18px, 2.5vw, 26px);
   right: clamp(18px, 2.5vw, 26px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.72);
-  flex-shrink: 0;
-  z-index: 2;
+  width: 32px;
+  height: 32px;
+  opacity: 0.92;
 }
 
-.mission-tile__icon-ring::before {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  border-top-color: var(--color-red);
-  border-right-color: var(--color-red);
-  border-bottom-color: rgba(10, 10, 10, 0.2);
-  border-left-color: rgba(10, 10, 10, 0.2);
-  transform: rotate(-18deg);
+.mission-tile__icon .tile-icon {
+  width: 100%;
+  height: 100%;
 }
 
-.mission-tile__icon-ring .tile-icon {
-  width: 28px;
-  height: 28px;
-  position: relative;
-  z-index: 1;
-}
-
-.bento-tile--red .mission-tile__icon-ring,
-.bento-tile--black .mission-tile__icon-ring {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.bento-tile--red .mission-tile__icon-ring::before,
-.bento-tile--black .mission-tile__icon-ring::before {
-  border-top-color: rgba(255, 255, 255, 0.85);
-  border-right-color: rgba(255, 255, 255, 0.85);
-  border-bottom-color: rgba(255, 255, 255, 0.25);
-  border-left-color: rgba(255, 255, 255, 0.25);
-}
-
-.bento-tile--red .mission-tile__icon-ring .tile-icon,
-.bento-tile--black .mission-tile__icon-ring .tile-icon {
+.bento-tile--red .mission-tile__icon .tile-icon,
+.bento-tile--black .mission-tile__icon .tile-icon {
   filter: brightness(0) invert(1);
+  opacity: 0.85;
 }
 
 .mission-tile--promo {
@@ -536,16 +501,6 @@
   color: var(--color-white);
   opacity: 0.08;
   pointer-events: none;
-}
-
-.mission-tile--digital .mission-tile__icon-ring {
-  width: 64px;
-  height: 64px;
-}
-
-.mission-tile--digital .mission-tile__icon-ring .tile-icon {
-  width: 32px;
-  height: 32px;
 }
 
 .contact-info__row {
@@ -619,7 +574,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 12px;
-  padding-right: 68px;
+  padding-right: clamp(36px, 4vw, 44px);
 }
 
 .mission-tile__label {
@@ -629,15 +584,6 @@
 .mission-tile__title--light .mission-tile__label {
   color: var(--color-white);
   opacity: 0.92;
-}
-
-.bento-tile--red .mission-tile__title--light .mission-tile__label,
-.bento-tile--black .mission-tile__title--light .mission-tile__label {
-  color: var(--color-white);
-}
-
-.mission-tile--digital .mission-tile__title {
-  padding-right: 76px;
 }
 
 .mission-tile__name {
@@ -799,18 +745,23 @@
 }
 
 .case-block__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   background: var(--color-gray-100, #f0f0f0);
   min-height: 100%;
 }
 
-.case-block__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.case-block__placeholder {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  text-align: center;
+  padding: 16px;
 }
 
 .case-block__cell--result-muted {
@@ -944,10 +895,6 @@
   .case-block__visual {
     aspect-ratio: 16 / 9;
     min-height: auto;
-  }
-
-  .case-block__image {
-    height: 100%;
   }
 
   .case-block__grid {

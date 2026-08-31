@@ -205,8 +205,8 @@
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "heading heading heading heading heading heading heading heading heading heading heading heading"
-    "feat feat feat feat feat w02 w02 w02 w03 w03 w03"
-    "w04 w04 w04 w04 w05 w05 w06 w06 w06 w06 w06 w06";
+    "feat feat feat feat w02 w02 w02 w02 w03 w03 w03 w03"
+    "feat feat feat feat w04 w04 w04 w05 w05 w06 w06 w06";
 }
 
 .why-canvas__heading {
