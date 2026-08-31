@@ -383,7 +383,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  height: 100%;
   min-height: clamp(128px, 14vw, 160px);
 }
 
@@ -442,17 +443,28 @@
   height: 32px;
 }
 
-.mission-tile__icon-ring {
+/* Mission tiles */
+.mission-tile {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  min-height: 160px;
+}
+
+.mission-tile__icon-ring {
+  position: absolute;
+  top: clamp(18px, 2.5vw, 26px);
+  right: clamp(18px, 2.5vw, 26px);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 56px;
   height: 56px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.72);
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .mission-tile__icon-ring::before {
@@ -559,17 +571,25 @@
 }
 
 .signals-tile__text {
-  font-size: clamp(0.88rem, 1.3vw, 1rem);
-  font-weight: 600;
-  line-height: 1.45;
-  letter-spacing: 0.01em;
+  margin-top: auto;
+  padding-right: clamp(36px, 4vw, 44px);
+  font-family: var(--font-family);
+  font-size: clamp(0.78rem, 1.15vw, 0.88rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--color-black);
-  padding-top: 36px;
-  max-width: 28ch;
+  max-width: 22ch;
+}
+
+.signals-tile--wide .signals-tile__text {
+  max-width: 32ch;
 }
 
 .signals-tile__text--light {
   color: var(--color-white);
+  opacity: 0.95;
 }
 
 @media (max-width: 640px) {
@@ -578,13 +598,7 @@
   }
 }
 
-/* Mission tiles */
-.mission-tile {
-  display: flex;
-  flex-direction: column;
-  min-height: 160px;
-}
-
+/* Mission tiles — typography & lists */
 .mission-tile__num {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
@@ -605,10 +619,25 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 12px;
+  padding-right: 68px;
 }
 
 .mission-tile__label {
   color: var(--color-black);
+}
+
+.mission-tile__title--light .mission-tile__label {
+  color: var(--color-white);
+  opacity: 0.92;
+}
+
+.bento-tile--red .mission-tile__title--light .mission-tile__label,
+.bento-tile--black .mission-tile__title--light .mission-tile__label {
+  color: var(--color-white);
+}
+
+.mission-tile--digital .mission-tile__title {
+  padding-right: 76px;
 }
 
 .mission-tile__name {
