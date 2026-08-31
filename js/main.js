@@ -427,6 +427,79 @@
     });
   }
 
+  function initCaseGalleries() {
+    const galleries = document.querySelectorAll('[data-case-gallery]');
+    if (!galleries.length) return;
+
+    galleries.forEach((gallery) => {
+      const slides = [...gallery.querySelectorAll('.case-gallery__slide')];
+      const dots = [...gallery.querySelectorAll('.case-gallery__dots span')];
+      if (slides.length < 2) return;
+
+      let index = slides.findIndex((slide) => slide.classList.contains('is-active'));
+      if (index < 0) index = 0;
+
+      let hoverTimer = null;
+      let lastAdvance = 0;
+
+      function setSlide(nextIndex) {
+        index = (nextIndex + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('is-active', i === index);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === index);
+        });
+
+        gallery.classList.remove('is-advancing');
+        void gallery.offsetWidth;
+        gallery.classList.add('is-advancing');
+      }
+
+      function advance() {
+        const now = Date.now();
+        if (now - lastAdvance < 380) return;
+        lastAdvance = now;
+        setSlide(index + 1);
+      }
+
+      gallery.addEventListener('click', (event) => {
+        event.preventDefault();
+        advance();
+      });
+
+      gallery.addEventListener('mouseenter', () => {
+        if (hoverTimer) window.clearInterval(hoverTimer);
+        advance();
+        hoverTimer = window.setInterval(advance, 1400);
+      });
+
+      gallery.addEventListener('mouseleave', () => {
+        if (hoverTimer) {
+          window.clearInterval(hoverTimer);
+          hoverTimer = null;
+        }
+      });
+
+      gallery.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          advance();
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          advance();
+        }
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          setSlide(index - 1);
+        }
+      });
+    });
+  }
+
   function initCasesCarousel() {
     const carousel = document.querySelector('.cases-carousel');
     if (!carousel) return;
@@ -582,6 +655,7 @@
     initContactForm();
     initLogoSphere();
     initCasesCarousel();
+    initCaseGalleries();
     initHeroGallery();
     initSignalsChecklist();
   });
