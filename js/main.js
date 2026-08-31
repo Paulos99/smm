@@ -514,6 +514,62 @@
     update();
   }
 
+  function initSignalsChecklist() {
+    const canvas = document.querySelector('.signals-canvas');
+    if (!canvas) return;
+
+    const inputs = [...canvas.querySelectorAll('.signals-check__input')];
+    const countEl = canvas.querySelector('[data-signals-count]');
+    const fillEl = canvas.querySelector('[data-signals-fill]');
+    const progressEl = canvas.querySelector('[data-signals-progress]');
+    const hintEl = canvas.querySelector('[data-signals-hint]');
+    const ctaEl = canvas.querySelector('[data-signals-cta]');
+
+    const hints = [
+      'Нажмите на карточки — отметьте знакомые ситуации',
+      'Есть зоны роста — это нормальный этап',
+      'Маркетинг даёт сбои — время системного подхода',
+      'Сигнал усиливается — пора подключать штаб',
+      'Критическая зона — нужна внешняя команда',
+      'Максимальный сигнал — давайте разберёмся вместе',
+    ];
+
+    function getCount() {
+      return inputs.filter((input) => input.checked).length;
+    }
+
+    function update() {
+      const count = getCount();
+      const percent = (count / inputs.length) * 100;
+
+      if (countEl) {
+        countEl.textContent = String(count);
+        countEl.classList.remove('is-pulse');
+        void countEl.offsetWidth;
+        if (count > 0) countEl.classList.add('is-pulse');
+      }
+
+      if (fillEl) fillEl.style.width = `${percent}%`;
+      if (progressEl) progressEl.setAttribute('aria-valuenow', String(count));
+
+      if (hintEl) {
+        const hintIndex = count === 0 ? 0 : Math.min(count, hints.length - 1);
+        hintEl.textContent = hints[hintIndex];
+        hintEl.classList.toggle('is-hot', count >= 3);
+      }
+
+      if (ctaEl) {
+        ctaEl.hidden = count < 3;
+      }
+    }
+
+    inputs.forEach((input) => {
+      input.addEventListener('change', update);
+    });
+
+    update();
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initBurger();
     initRevealStagger();
@@ -527,5 +583,6 @@
     initLogoSphere();
     initCasesCarousel();
     initHeroGallery();
+    initSignalsChecklist();
   });
 })();

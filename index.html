@@ -93,61 +93,103 @@
           <div class="section-shell__inner">
             <div class="bento-canvas signals-canvas">
               <div class="bento-tile bento-tile--white signals-canvas__heading reveal-item">
-                <p class="signals-eyebrow">
-                  <span class="signals-eyebrow__dash" aria-hidden="true"></span>
-                  Сигналы к действию
-                </p>
                 <h2 class="canvas-title canvas-title--dark">Когда мы <span>нужны бизнесу</span></h2>
-                <p class="signals-subtitle">Подключаемся, когда отдельные действия не складываются в систему и не дают измеримого эффекта.</p>
+                <p class="signals-subtitle">Отметьте пункты, которые узнали в своём бизнесе — чем больше галочек, тем острее сигнал.</p>
+                <div class="signals-meter" data-signals-meter>
+                  <div class="signals-meter__header">
+                    <span class="signals-meter__label">Уровень сигнала</span>
+                    <span class="signals-meter__count"><strong data-signals-count>0</strong> / 6</span>
+                  </div>
+                  <div
+                    class="signals-meter__track"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="6"
+                    aria-valuenow="0"
+                    aria-label="Отмечено пунктов"
+                    data-signals-progress
+                  >
+                    <div class="signals-meter__fill" data-signals-fill></div>
+                    <div class="signals-meter__ticks" aria-hidden="true">
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <p class="signals-meter__hint" data-signals-hint>Нажмите на карточки — отметьте знакомые ситуации</p>
+                  <a href="#contacts" class="signals-meter__cta" data-signals-cta hidden>Передать задание в штаб →</a>
+                </div>
               </div>
 
-              <article class="bento-tile bento-tile--gray signals-tile signals-tile--wide bento-tile--shape-a reveal-item">
+              <label class="bento-tile bento-tile--gray signals-tile signals-tile--wide signals-check bento-tile--shape-a reveal-item">
+                <input type="checkbox" class="signals-check__input">
+                <span class="signals-check__toggle" aria-hidden="true">
+                  <svg class="signals-check__tick" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
                 <span class="signals-tile__num">01</span>
                 <span class="signals-tile__icon" aria-hidden="true">
                   <img src="assets/icons/smartphone.svg" alt="" class="tile-icon tile-icon--lg" width="32" height="32">
                 </span>
                 <p class="signals-tile__text">Социальные сети не приводят клиентов</p>
-              </article>
+              </label>
 
-              <article class="bento-tile bento-tile--gray signals-tile bento-tile--shape-b reveal-item">
+              <label class="bento-tile bento-tile--gray signals-tile signals-check bento-tile--shape-b reveal-item">
+                <input type="checkbox" class="signals-check__input">
+                <span class="signals-check__toggle" aria-hidden="true">
+                  <svg class="signals-check__tick" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
                 <span class="signals-tile__num">02</span>
                 <span class="signals-tile__icon" aria-hidden="true">
                   <img src="assets/icons/calendar-off.svg" alt="" class="tile-icon" width="26" height="26">
                 </span>
                 <p class="signals-tile__text">Контент публикуется нерегулярно</p>
-              </article>
+              </label>
 
-              <article class="bento-tile bento-tile--red signals-tile signals-tile--accent bento-tile--shape-a reveal-item">
+              <label class="bento-tile bento-tile--red signals-tile signals-tile--accent signals-check bento-tile--shape-a reveal-item">
+                <input type="checkbox" class="signals-check__input">
+                <span class="signals-check__toggle" aria-hidden="true">
+                  <svg class="signals-check__tick" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
                 <span class="signals-tile__num signals-tile__num--light">03</span>
                 <span class="signals-tile__icon signals-tile__icon--light" aria-hidden="true">
                   <img src="assets/icons/route.svg" alt="" class="tile-icon" width="26" height="26">
                 </span>
                 <p class="signals-tile__text signals-tile__text--light">Нет единой стратегии продвижения</p>
-              </article>
+              </label>
 
-              <article class="bento-tile bento-tile--gray signals-tile signals-tile--wide bento-tile--shape-b reveal-item">
+              <label class="bento-tile bento-tile--gray signals-tile signals-tile--wide signals-check bento-tile--shape-b reveal-item">
+                <input type="checkbox" class="signals-check__input">
+                <span class="signals-check__toggle" aria-hidden="true">
+                  <svg class="signals-check__tick" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
                 <span class="signals-tile__num">04</span>
                 <span class="signals-tile__icon" aria-hidden="true">
                   <img src="assets/icons/shield-alert.svg" alt="" class="tile-icon" width="26" height="26">
                 </span>
                 <p class="signals-tile__text">Бренд выглядит слабее конкурентов</p>
-              </article>
+              </label>
 
-              <article class="bento-tile bento-tile--gray signals-tile reveal-item">
+              <label class="bento-tile bento-tile--gray signals-tile signals-check reveal-item">
+                <input type="checkbox" class="signals-check__input">
+                <span class="signals-check__toggle" aria-hidden="true">
+                  <svg class="signals-check__tick" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
                 <span class="signals-tile__num">05</span>
                 <span class="signals-tile__icon" aria-hidden="true">
                   <img src="assets/icons/users.svg" alt="" class="tile-icon" width="26" height="26">
                 </span>
                 <p class="signals-tile__text">Не хватает ресурсов заниматься продвижением</p>
-              </article>
+              </label>
 
-              <article class="bento-tile bento-tile--black signals-tile signals-tile--accent bento-tile--shape-a reveal-item">
+              <label class="bento-tile bento-tile--black signals-tile signals-tile--accent signals-check bento-tile--shape-a reveal-item">
+                <input type="checkbox" class="signals-check__input">
+                <span class="signals-check__toggle" aria-hidden="true">
+                  <svg class="signals-check__tick" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
                 <span class="signals-tile__num signals-tile__num--light">06</span>
                 <span class="signals-tile__icon signals-tile__icon--light" aria-hidden="true">
                   <img src="assets/icons/chart-column-decreasing.svg" alt="" class="tile-icon" width="26" height="26">
                 </span>
                 <p class="signals-tile__text signals-tile__text--light">Нет понятной аналитики и контроля результата</p>
-              </article>
+              </label>
             </div>
           </div>
         </div>
