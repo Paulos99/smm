@@ -98,7 +98,7 @@
         showMessage(messageEl, err.message, 'error');
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Отправить задание в штаб';
+        submitBtn.textContent = 'Передать задание в штаб';
       }
     });
   }
