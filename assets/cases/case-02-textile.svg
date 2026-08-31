@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 560" width="440" height="560" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c41a17"/>
+      <stop offset="100%" stop-color="#E1211E"/>
+    </linearGradient>
+    <pattern id="textile" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="none"/>
+      <path d="M0 12h24M12 0v24" stroke="#0A0A0A" stroke-width="0.6" opacity="0.15"/>
+      <circle cx="12" cy="12" r="1.5" fill="#ffffff" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="440" height="560" fill="url(#g2)"/>
+  <rect width="440" height="560" fill="url(#textile)"/>
+  <text x="380" y="520" font-family="system-ui,sans-serif" font-size="120" font-weight="800" fill="#0A0A0A" opacity="0.08">02</text>
+  <rect x="70" y="140" width="300" height="280" rx="8" fill="#ffffff" opacity="0.08"/>
+  <path d="M90 200 H350 M90 260 H350 M90 320 H280" stroke="#ffffff" stroke-width="2" opacity="0.35" stroke-linecap="round"/>
+  <circle cx="220" cy="380" r="48" fill="none" stroke="#0A0A0A" stroke-width="2" opacity="0.2"/>
+</svg>
