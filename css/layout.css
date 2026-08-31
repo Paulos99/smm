@@ -156,11 +156,11 @@
 
 /* Signals canvas */
 .signals-canvas {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    "heading heading heading"
-    "s01 s02 s03"
-    "s04 s05 s06";
+    "heading heading heading heading heading heading"
+    "s01 s01 s02 s03 s03 s03"
+    "s04 s04 s05 s06 s06 s06";
 }
 
 .signals-canvas__heading {
@@ -205,8 +205,8 @@
   grid-template-rows: auto auto auto;
   grid-template-areas:
     "heading heading heading heading heading heading heading heading heading heading heading heading"
-    "feat feat feat feat w02 w02 w02 w02 w03 w03 w03 w03"
-    "feat feat feat feat w04 w04 w04 w05 w05 w06 w06 w06";
+    "feat feat feat feat feat w02 w02 w02 w03 w03 w03"
+    "w04 w04 w04 w04 w05 w05 w06 w06 w06 w06 w06 w06";
 }
 
 .why-canvas__heading {
@@ -267,12 +267,12 @@
   }
 
   .signals-canvas {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      "heading heading"
-      "s01 s02"
-      "s03 s04"
-      "s05 s06";
+      "heading heading heading heading"
+      "s01 s01 s02 s02"
+      "s03 s03 s03 s04"
+      "s05 s06 s06 s06";
   }
 
   .arsenal-canvas {
@@ -286,14 +286,12 @@
   }
 
   .why-canvas {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      "heading heading"
-      "feat feat"
-      "w02 w03"
-      "w04 w04"
-      "w05 w05"
-      "w06 w06";
+      "heading heading heading heading"
+      "feat feat feat feat"
+      "w02 w02 w03 w03"
+      "w04 w04 w05 w06";
     grid-template-rows: auto;
   }
 
