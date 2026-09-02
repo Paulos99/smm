@@ -1,6 +1,10 @@
-# СММ-СФЕРА
+# СММ-СФЕРА (архивная версия)
 
-Одностраничный лендинг маркетингового агентства **СММ-СФЕРА** в стиле bento-grid.
+Это **архив** одностраничного bento-лендинга. Актуальный сайт Димы публикуется отдельно:
+
+**https://github.com/Paulos99/smm-sfera** → страница **https://paulos99.github.io/smm-sfera/**
+
+ZIP этой версии: [`archive/bento-landing-2026-09.zip`](archive/bento-landing-2026-09.zip)
 
 Стек: HTML, CSS, JavaScript (без фреймворков).
 
@@ -12,9 +16,9 @@ python -m http.server 8766
 
 Открыть: [http://localhost:8766](http://localhost:8766)
 
-## GitHub Pages
+## GitHub Pages (эта версия)
 
-Репозиторий готов к публикации как статический сайт:
+Страница архива: **https://paulos99.github.io/smm/**
 
 1. Settings → Pages
 2. Source: **Deploy from a branch**
@@ -29,7 +33,9 @@ python -m http.server 8766
 ```
 index.html
 config.js
-assets/logo.png
+assets/
 css/
-js/main.js
+js/
+policies.html
+archive/bento-landing-2026-09.zip
 ```
